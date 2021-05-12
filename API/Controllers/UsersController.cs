@@ -15,7 +15,7 @@ namespace API.Controllers
     [ApiController]
     [Route("api/[controller]")]
 
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         // Dependency injection
         private readonly DataContext _context;
