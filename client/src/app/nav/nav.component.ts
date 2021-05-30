@@ -31,7 +31,7 @@ export class NavComponent implements OnInit {
     this.loggedIn = false;
   }
 
-  getCurrentUser() {
+  getCurrentUser() { // current user holds user object
     this.accountService.currentUser$.subscribe(user => {
       this.loggedIn = !!user;
     }, error => {
