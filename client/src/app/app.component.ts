@@ -12,10 +12,11 @@ export class AppComponent implements OnInit{
   title = 'The Dating app';
   users: any;
 
-  constructor(private http: HttpClient, private accountService: AccountService) {} 
+  // to print users on console you need the HTTP client on the CTOR
+  // 
+  constructor(private accountService: AccountService) {} 
 
   ngOnInit() {
-    this.getUsers();
     this.setCurrentUser();
     
 }
@@ -25,12 +26,13 @@ setCurrentUser() {
   this.accountService.setCurrentUser(user);
 }
 
-getUsers(){
-  // use our http service
-  this.http.get('https://localhost:5001/api/users').subscribe(response => {
-    this.users = response;
-  }, error => {
-    console.log(error);
-  })
-}
+// show users on browser console
+// getUsers(){
+//   // use our http service
+//   this.http.get('https://localhost:5001/api/users').subscribe(response => {
+//     this.users = response;
+//   }, error => {
+//     console.log(error);
+//   })
+// }
 }
